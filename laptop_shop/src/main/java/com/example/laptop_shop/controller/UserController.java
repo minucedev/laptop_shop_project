@@ -7,27 +7,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 //Mô hình MVC
-//@Controller
-//public class UserController {
-//
-//    @RequestMapping("/")
-//    public String getHomePage() {
-//        return "HOME PAGE";
-//    }
-//}
-
-//Mô hình RestfulAPI
-@RestController
+@Controller
 public class UserController {
-
     private UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
-    @GetMapping()
+    @RequestMapping("/")
     public String getHomePage() {
-        return this.userService.handleHello();
+        return "hello";
     }
 }
+
+/// /Mô hình RestfulAPI
+//@RestController
+//public class UserController {
+//
+//    private UserService userService;
+//
+//    public UserController(UserService userService) {
+//        this.userService = userService;
+//    }
+//
+//    @GetMapping()
+//    public String getHomePage() {
+//        return this.userService.handleHello();
+//    }
+//}
